@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CONTINHAS</h1>
+    <label>Insira um número</label>
+    <input type="text" id="id_n1">
+    <br><br>
+    <label>Insira um número</label>
+    <input type="text" id="id_n2">
+    <br><br>
+    <button onclick="soma()">Soma</button>
+    <br><br>
+    <button onclick="diferenca()">Diferença</button>
+    <br><br>
+    <button onclick="produto()">Produto</button>
+    <br><br>
+    <button onclick="razao()">Razão</button>
+    <div id="resultado"></div>
+</body>
+<script>
+   
+    function soma(){
+        resultado.innerHTML=''
+        let numero1 = Number(id_n1.value)
+        let numero2 = Number(id_n2.value)
+        let soma = numero1 + numero2
+        console.log('PASSANDO NO SOMA')
+        resultado.innerHTML = `A soma entre o número ${numero1} e número ${numero2} é ${soma}`
+    }
+
+      function diferenca(){
+        resultado.innerHTML=''
+        let numero1 = Number(id_n1.value)
+        let numero2 = Number(id_n2.value)
+        let diferenca = numero1 - numero2
+        
+        resultado.innerHTML = `A diferença entre o número ${numero1} e número ${numero2} é ${diferenca}`
+    }
+
+      function produto(){
+        resultado.innerHTML=''
+        let numero1 = Number(id_n1.value)
+        let numero2 = Number(id_n2.value)
+        let produto = numero1 * numero2
+        
+        resultado.innerHTML = `O produto entre o número ${numero1} e número ${numero2} é ${produto}`
+    }
+
+      function razao(){
+        resultado.innerHTML=''
+        let numero1 = Number(id_n1.value)
+        let numero2 = Number(id_n2.value)
+        let razao = numero1/numero2
+        
+        resultado.innerHTML = `A razão entre o número ${numero1} e número ${numero2} é ${razao}`
+    }
+</script>
+</html>

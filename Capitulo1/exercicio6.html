@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ENDEREÇO</h1>
+    <label>Qual o nome da sua rua?</label>
+    <input type="text" id="id_nome">
+    <br><br>
+    <label>Qual o número da sua casa?</label>
+    <input type="text" id="id_numero">
+    <br><br>
+    <button onclick="ondeMoro()">Onde eu moro</button>
+</body>
+<script>
+    function ondeMoro(){
+        let nome = id_nome.value
+        let numero = id_numero.value
+        alert(`Seu logradouro é ${nome}`)
+        alert(`O número do seu logradouro é ${numero}`)
+    }
+</script>
+</html>

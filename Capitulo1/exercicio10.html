@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SuperSyajin</h1>
+    <label>Insira o nome do seu guerreiro</label>
+    <input type="text" id="id_nome">
+    <br><br>
+    <label>Insira o Ki normal do seu gurreiro</label>
+    <input type="text" id="id_poder">
+    <br><br>
+    <button onclick="ki()">Ver Ki em cada formas</button>
+</body>
+<script>
+    function ki(){
+        let nome = id_nome.value
+        let kiNormal = Number(id_poder.value)
+        let kiSuper = kiNormal * 50
+        let ki2 = kiNormal * 100
+        alert(`O guerreiro ${nome} tem a força Super Sayajin ${kiSuper}!`)
+        alert(`O guerreiro ${nome} tem a força Super Sayajin2 ${ki2}!`)
+    }
+</script>
+</html>

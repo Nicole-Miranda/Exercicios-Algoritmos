@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NOTA DA ESCOLA!</h1>
+    <label>Nota da escola</label>
+    <input type="text" id="id_nota">
+    <br><br>
+    <button onclick="opniaoVo()">Opinião da Vó</button>
+    <br><br>
+    <button onclick="opniaoMae()">Opnião da Mãe</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    
+    function opniaoVo(){
+        let nota = Number(id_nota.value)
+        resultado.innerHTML = `Muito bem, que neto inteligente, porque tirou ${nota}`
+    }
+
+    function opniaoMae(){
+        let nota = Number(id_nota.value)
+        resultado.innerHTML = `Não fez mais que a obrigação com essa nota ${id_nota.value}`
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TIMES!</h1>
+    <label>Qual o nome do seu time?</label>
+    <input type="text" id="id_nome">
+    <br><br>
+    <label>Quantos Titulos o seu time tem?</label>
+    <input type="text" id="id_titulos">
+    <br><br>
+    <button onclick="times()">Amo meu time</button>
+</body>
+<script>
+    function times(){
+        let nome = id_nome.value
+        let titulos = id_titulos.value
+        alert(`O time ${nome} tem ${titulos} Títulos`)
+    }
+</script>
+</html>

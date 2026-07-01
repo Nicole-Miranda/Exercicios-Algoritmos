@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>PESO E ALTURA</h1> 
+   <label>Digite seu peso</label>
+   <input type="text" id="id_peso" placeholder="Peso em Kg">
+   <br><br>
+   <label>Digite sua altura</label>
+   <input type="text" id="id_altura" placeholder="Altura em metros">
+   <br><br>
+   <button onclick="cadastrar()">Fale Comigo</button>
+</body>
+<script>
+    function cadastrar(){
+        let peso = Number(id_peso.value)
+        let altura = Number(id_altura.value)
+        alert(`Você pesa ${peso}Kg e tem ${altura} de altura`)
+    }
+</script>
+</html>

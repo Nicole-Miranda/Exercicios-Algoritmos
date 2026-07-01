@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BILHETE UNICO</h1>
+    <label>Qual o valor da passagem?</label>
+    <input type="text" id="id_valor">
+    <br><br>
+    <label>Quantas viagens você fará por mês?</label>
+    <input type="text" id="id_viagens">
+    <br><br>
+    <button onclick="economia()">Ver economia</button>
+</body>
+<script>
+    function economia(){
+        let valorPassagem = Number(id_valor.value)
+        let quantidadeViagens = Number(id_viagens.value)
+        let valorEstudante = valorPassagem/2
+        let valorTotal = valorEstudante * quantidadeViagens 
+        let valorComum = valorPassagem * quantidadeViagens
+        let valorPago = valorComum - valorTotal
+
+        alert(`Você economizará $${valorPago.toFixed(2)} reais por mês`)
+    }
+</script>
+</html>

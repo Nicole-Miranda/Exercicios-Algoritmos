@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>VOTAÇÃO</h1>
+    <label>Quantidade de votos do candidato A</label>
+    <input type="text" id="id_candidatoA">
+    <br><br>
+    <label>Quantidade de votos candidato B </label>
+    <input type="text" id="id_candidatoB">
+    <br><br>
+    <label>Quantidade de votos brancos</label>
+    <input type="text" id="id_brancos">
+    <br><br>
+    <label>Quantidade de votos nulos</label>
+    <input type="text" id="id_nulos">
+    <br><br>
+    <button ondblclick="resultado()">Resultado da Eleição</button>
+    <div id="mostrar"></div>
+</body>
+<script>
+   function resultado(){
+    let A = Number(id_candidatoA.value)
+    let B = Number(id_candidatoB.value)
+    let branco = Number(id_brancos.value)
+    let nulos = Number(id_nulos.value)
+    let total = A + B + branco + nulos
+    let candidatoA = (A/total) * 100
+    let candidatoB = (B/total) * 100
+    let invalidos = ((branco + nulos)/total) * 100
+    let invalidosTotal = branco + nulos
+   
+    mostrar.innerHTML = `Total de votos:${total}<br>
+    Candidato A:${candidatoA.toFixed(0)}%(${A})<br>
+    Candidato B:${candidatoB.toFixed(0)}%(${B})<br>
+    Inválidos:${invalidos.toFixed(0)}%(${invalidosTotal})
+    `
+
+   } 
+</script>
+</html>
