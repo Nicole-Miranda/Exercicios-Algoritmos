@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>REFRIGERANTE</h1>
+    <label>Qunatas latinhas você toma por dia?</label>
+    <input type="text" id="id_latinha">
+    <br><br>
+    <button onclick="calcular()">Quantos refris?</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcular(){
+        let latinhas = Number(id_latinha.value)
+        let latinhasAno = latinhas * 365
+        
+        resultado.innerHTML += `Você consumiu ${latinhasAno} latinhas de refri!<br>`
+        if(latinhas => 500){
+            resultado.innerHTML +=`Cuidado com a diabetes!!`
+        }
+    }
+</script>
+</html>

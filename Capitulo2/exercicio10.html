@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MERCADO BOM DOCE</h1>
+    <label>Quantidade de chocolate comprados</label>
+    <input type="text" id="id_chocolate">
+    <br><br>
+    <button onclick="compra()">Compra</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function compra(){
+        let chocolate = Number(id_chocolate.value)
+        let valor = chocolate * 3
+        let valorDesc = chocolate * 2.50
+        resultado.innerHTML += ``
+        if(chocolate > 12){
+            resultado.innerHTML += `O valor da sua compra foi de ${valorDesc}`
+        }else{
+            resultado.innerHTML += `O valor da sua compra foi de ${valor}`
+        }
+    }
+</script>
+</html>

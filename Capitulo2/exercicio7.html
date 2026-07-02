@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ELEVADOR</h1>
+    <label>Quantidade de homens no elevador</label>
+    <input type="text" id="id_homens">
+    <br><br>
+    <label>Quantidade de mulheres no elevador</label>
+    <input type="text" id="id_mulher">
+    <br><br>
+    <button onclick="calcular()">Analisar peso</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcular(){
+        let homem = Number(id_homens.value)
+        let mulher = Number(id_mulher.value)
+        let peso = homem * 80 + mulher * 60
+
+        if(peso > 800){
+            resultado.innerHTML += `<span style="color:blue;"> Será necessário que alguém desça para que o elevador se movimente <br> `
+        }else{
+            resultado.innerHTML += `Este elevador suporte 800kg e o peso estimado desta lotação é de ${peso.toFixed(2)} <br>`
+        }
+    }
+</script>
+</html>

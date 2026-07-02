@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TEMPO DE TELA</h1>
+    <label>Ultima serie que você assistiu</label>
+    <input type="text" id="id_serie">
+    <br><br>
+    <label>Total de ep que você assistiu</label>
+    <input type="text" id="id_ep">
+    <br><br>
+    <button onclick="calcular()">Verificar nível</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcular(){
+        let serie = id_serie.value
+        let ep = Number(id_ep.value)
+        let tempo = ep * 0.36
+
+        
+        if(tempo > 30){
+            resultado.innerHTML += ``
+            resultado.innerHTML += `Uau, você realmente gosta dessa série! <br>`
+        }else{
+            resultado.innerHTML += `Vejo que você gosta da série ${serie} <br>`
+        }
+
+    }
+</script>
+</html>

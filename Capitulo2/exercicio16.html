@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PESO</h1>
+    <label>Insira o peso</label>
+    <input type="text" id="id_peso">
+    <br><br>
+    <button onclick="verificar()">Verificar peso</button>
+</body>
+<script>
+    function verificar(){
+        let peso = Number(id_peso.value)
+
+        if(peso <= 13.5){
+            alert('Abaixo do peso')
+        }else if(peso > 21.2){
+             alert('Acima do peso')
+        }else if(peso <= 21.2){
+             alert('Peso na média')
+        }else if(peso == 18.3){
+             alert('Peso Perfeito')
+        }
+    }
+</script>
+</html>

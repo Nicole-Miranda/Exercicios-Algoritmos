@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ALUNO</h1>
+    <label>Frequencia do Aluno</label>
+    <input type="text" id="id_aluno">
+    <br><br>
+    <button onclick="calcular()">Analisar frequencia</button>
+    <div id="resultado"></div>
+    <img src="" alt="">
+</body>
+<script>
+    function calcular(){
+        let aluno = Number(id_aluno.value)
+        
+        if(aluno < 50){
+            resultado.innerHTML = ` <img src="https://img.magnific.com/fotos-gratis/turista-apontando-para-cima_1368-7017.jpg" alt="turista">`
+        }else if(aluno >= 50){
+             resultado.innerHTML =` <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNUYdMXZoNrqFO44IHLFp3kBi-K7Ld117HomghZ-NdiblhzQ4nsQ9e210&s=10" alt="aluno">`
+        }
+    }
+</script>
+</html>

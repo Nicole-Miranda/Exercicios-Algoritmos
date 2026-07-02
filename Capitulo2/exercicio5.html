@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RENDA</h1>
+    <label>Qual a renda familiar?</label>
+    <input type="text" id="id_renda">
+    <br><br>
+    <label>Qual o valor da prestação?</label>
+    <input type="text" id="id_prest">
+    <br><br>
+    <button onclick="calcular()">Verificar financiamento!</button>
+    <br><br>
+    <div id="resultado"></div>
+</body>
+<script>
+  function calcular(){
+    let renda = Number(id_renda.value)
+    let valorPrest = Number(id_prest.value)
+    let prestacao = (valorPrest/renda) * 100
+
+    resultado.innerHTML += `A prestação corresponde a ${prestacao.toFixed(0)}% da renda familiar<br>`
+
+    if(prestacao > 30){
+        resultado.innerHTML += `Será necessário complementar a renda familiar`
+    }
+  }
+</script>
+</html>
