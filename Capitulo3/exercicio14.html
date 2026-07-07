@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DESEMPENNHO ALUNO</h1>
+    <label>Insira sua nota</label>
+    <input type="text" id="id_nota">
+    <br><br>
+    <label>Insira sua frequencia</label>
+    <input type="text" id="id_freq">
+    <br><br>
+    <button onclick="autenticar()">Analisar aluno</button>
+    <br><br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function autenticar(){
+        let nota = Number(id_nota.value)
+        let frequencia = Number(id_freq.value)
+
+        if(nota >= 0 && nota <= 10){
+          if(nota >= 0 && nota <=6){
+            resultado.innerHTML += `Aluno ficou abaixo da média<br> `
+          }else if(nota >= 6 && nota <= 8){
+            resultado.innerHTML += `Aluno ficou na média<br>`
+          }else{
+            resultado.innerHTML += `Aluno acima da média <br>`
+          }
+        }else{
+            alert('Onde já se viu nota menor que 0 e maior que 10??')
+            return
+        }
+
+        if(frequencia >= 0 && frequencia <= 100){
+           if(frequencia >= 75){
+            resultado.innerHTML += 'Aluno aprovado <br>'
+           }else{
+            resultado.innerHTML += 'Aluno reprovado por frequência <br>'
+           }
+        }else{
+            alert('Onde já se viu frequencia menor que 0 e maior que 100??')
+            return
+        }
+    }
+</script>
+</html>

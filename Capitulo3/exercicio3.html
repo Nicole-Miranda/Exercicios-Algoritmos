@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NOTA ALUNO</h1>
+    <label>Insira sua nota</label>
+    <input type="text" id="id_nota">
+    <br><br>
+    <button onclick="avaliar()">Avaliar aluno</button>
+</body>
+<script>
+    function avaliar(){
+        let notaAluno = Number(id_nota.value)
+
+        if(notaAluno >= 0 && notaAluno <= 10){
+            alert('Nota válida!')
+        }else{
+            alert('Onde já se viu nota menor que 0 e maior que 10??')
+        }
+    }
+</script>
+</html>

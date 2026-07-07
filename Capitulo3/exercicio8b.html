@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ENEM</h1>
+    <label>Insira sua nota do ENEM</label>
+    <input type="text" id="id_enem">
+    <br><br>
+    <label>Insira sua nota do vestibular interno</label>
+    <input type="text" id="id_vestibular">
+    <br><br>
+    <button onclick="avaliar()">Avaliações</button>
+</body>
+<script>
+    function avaliar(){
+        let enem = Number(id_enem.value)
+        let vestibular = Number(id_vestibular.value)
+
+        if(enem >=800 || vestibular >=700){
+            alert('Parabéns aprovado!')
+        }else{
+            alert('Tente semestre que vem!')
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EMPRESA PILOTTUS</h1>
+    <label>Intervalo de altura(inicial)</label>
+    <input type="text" id="id_alturaInicial">
+    <br><br>
+    <label>Intervalo de altura(final)</label>
+    <input type="text" id="id_alturaFinal">
+    <br><br>
+    <label>Insira seu nome</label>
+    <input type="text" id="id_nome">
+    <br><br>
+    <label>Insira sua altura</label>
+    <input type="text" id="id_altura">
+    <br><br>
+    <button onclick="verificar()">Verificar candidato</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificar(){
+        let alturaInicial = Number(id_alturaInicial.value)
+        let alturaFinal = Number(id_alturaFinal.value)
+        let nome = id_nome.value
+        let altura = Number(id_altura.value)
+
+        if(alturaInicial > 1 && alturaFinal > alturaInicial){
+            if(altura < alturaFinal && altura > alturaInicial){
+               resultado.innerHTML = `O candidato ${nome}, 
+               com altura de ${altura} metros, participará do processo de seleção de piloto. 
+               <br>` 
+            }else{
+                resultado.innerHTML = `Infelizmente, o candidato ${nome}, com altura de ${altura} metros, 
+                não atende os requisitos da seleção.`
+            }
+        }else{
+            alert('Intervalo da altura de seleção é inválida!')
+            return
+        }
+        
+
+    }
+</script>
+</html>

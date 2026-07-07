@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>AVALIAR ALUNO</h1> 
+   <label>Insira a sua nota</label>
+   <input type="text" id="id_aluno">
+   <br><br>
+   <button onclick="avaliar()">Avaliar Aluno</button>
+</body>
+<script>
+    function avaliar(){
+        let nota = Number(id_aluno.value)
+
+        if(nota < 6){
+            alert('Aluno não aprovado')
+        }else if(nota >= 8.5 && nota <= 10){
+            alert('Aluno exemplar')
+        }else if(nota >=6 && nota <= 8.5){
+            alert('Aluno comum aprovado!')
+        }
+    }
+</script>
+</html>

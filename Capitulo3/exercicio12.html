@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CELULAR</h1>
+    <label>Tamanho da tela do celular</label>
+    <input type="text" id="id_celular">
+    <br><br>
+    <label>Qual a cor do aparelho?</label>
+    <input type="text" id="id_cor">
+    <br><br>
+    <button onclick="verificar()">Será que ele gosta?</button>
+    <div id="resultado"></div>
+    <img src="" alt="">
+</body>
+<script>
+    function verificar(){
+        let tamanho = Number(id_celular.value)
+        let cor = id_cor.value
+
+        if(tamanho >= 6.5 && cor == 'preta' || cor == 'prata'){
+            resultado.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCXuyOyB6TG7RFVk6djX-lpzgrIwGbUlvnjklQydLgQ&s=10" alt="pessoa feliz">`
+        }else{
+            resultado.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7rOYuHfPzhRYc3uZ1HXsAjJCShP7dxhXf-cuZYJybGA&s=10" alt="">`
+        }
+    }
+</script>
+</html>
