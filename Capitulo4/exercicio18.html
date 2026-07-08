@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FASES DA VIDA</h1>
+    <label>Digite sua idade:</label>
+    <input type="text" id="id_idade" oninput="verificar()">
+    <br><br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function fase(idade){
+        if (idade <= 4) {
+            return "Primeira Infância"
+        } else if (idade <= 6) {
+            return "Pré-escolar"
+        } else if (idade <= 10) {
+            return "Segunda Infância"
+        } else if (idade <= 18) {
+            return "Adolescência"
+        } else if (idade <= 50) {
+            return "Adulto"
+        } else if (idade <= 100) {
+            return "Melhor Idade"
+        } else {
+            return "Matusalém"
+        }
+    }
+
+    function verificar(){
+        let idadeDigitada = Number(id_idade.value)
+
+        resultado.innerHTML = ""
+
+        for (let i = 0; i <= idadeDigitada; i++) {
+            resultado.innerHTML += `${i} anos (${fase(i)})<br>`
+        }
+    }
+</script>

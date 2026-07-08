@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MUSCULAÇÃO</h1>
+    <label>De quanto em quanto dia você pratica musculação?</label>
+    <input type="text" id="id_dia">
+    <br><br>
+    <button onclick="verificar()">Exibir rotina mensal</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificar(){
+        let diasPratica = Number(id_dia.value)
+
+        for (let i = 1; i <= 30; i++) {
+           
+               if((i - 1) % diasPratica == 0){
+                   resultado.innerHTML += ` Dia${i} - Musculação<br>`
+                }else{
+                    resultado.innerHTML += `Dia${i} - Comer, dormir etc<br>`
+                }
+            
+        }
+    }
+</script>
+</html>

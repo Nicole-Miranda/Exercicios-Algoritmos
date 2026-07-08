@@ -10,12 +10,16 @@
    <label>Quantas pessoas vão entrar no carro?</label>
    <input type="text" id="id_pessoas">
    <br><br>
+   <label>Quantidade de passageiros suportados</label>
+   <input type="text" id="id_passageirosMax">
+   <br><br>
    <button onclick="verificar()">#PartiuCarona</button>
    <div id="resultado"></div>
 </body>
 <script>
     function verificar(){
         let pessoas = Number(id_pessoas.value)
+        let capacidadeTotal = Number(id_passageirosMax.value)
 
         for (let i = 1; i <= pessoas; i++) {
 
@@ -26,7 +30,7 @@
             else if(i < 6){
                resultado.innerHTML += `Entrou o ${i}° passageiro<br>`
                 
-            }else{
+            }else if( i > capacidadeTotal){
                 resultado.innerHTML += `O passageiro ${i}° terá que esperar!<br>`
             }
             

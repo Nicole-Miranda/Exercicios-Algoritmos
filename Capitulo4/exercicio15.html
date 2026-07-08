@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ELEFANTE</h1>
+    <label>Quantos elefantes você ira contar?</label>
+    <input type="text" id="id_quantidadeElefante">
+    <br><br>
+    <button onclick="verificar()">Atazanar a médium</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificar() {
+        let elefantes = Number(id_quantidadeElefante.value)
+
+        resultado.innerHTML = ""
+
+        if (elefantes == 1) {
+            resultado.innerHTML += `1 elefante incomoda muita gente!<br>`
+            return
+        }
+
+
+        for (let i = 2; i <= elefantes; i++) {
+            resultado.innerHTML += `1 elefante incomoda muita gente!<br>`
+            resultado.innerHTML += `${i} elefantes,`
+
+            for (let j = 1; j <= i; j++) {
+                resultado.innerHTML += `incomodam, `
+            }
+
+            resultado.innerHTML += `muito mais!<br>`
+        }
+
+
+    }
+</script>
+
+</html>

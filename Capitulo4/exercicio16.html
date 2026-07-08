@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <label>Quantos depositos você fez no banco?</label> 
+   <input type="text" id="id_deposito">
+   <br><br>
+   <label>Qual o valor de cada depósito?</label>
+   <input type="text" id="id_valor">
+   <br><br>
+   <button onclick="verificar()">Acompanhar grana</button>
+   <div id="resultado"></div>
+</body>
+<script>
+    function verificar(){
+        let quantidadeDeposito = Number(id_deposito.value)
+        let valor = Number(id_valor.value)
+        let total = 0
+
+        for (let i = 1; i <= quantidadeDeposito; i++) {
+            total += valor
+            
+            if(i % 3 == 0){
+                total += valor * 0.01
+                resultado.innerHTML += `${i}° Mês:${total.toFixed(2)}<br>`
+            }else{
+
+                resultado.innerHTML += `${i}° Mês:${total.toFixed(2)}<br>`
+            }
+        }
+        resultado.innerHTML += `Total guardado: R$ ${total.toFixed(2)}`
+    }
+</script>
+</html>

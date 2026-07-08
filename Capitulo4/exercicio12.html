@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CAFÉ COM LEITE</h1>
+    <label>Quantas xícaras de café com leite você já tomou na vida?</label>
+    <input type="text" id="id_cafe">
+    <br><br>
+    <button onclick="verificar()">Ver quantidade</button>
+    <div id="resultado"></div>
+    
+</body>
+<script>
+    function verificar(){
+        let cafe = Number(id_cafe.value)
+        let colherleite = cafe * 1
+        let colhercafe = cafe * 2
+
+        resultado.innerHTML = ""
+
+         resultado.innerHTML += "<p>Leite em pó:</p>"
+        for (let i = 1; i <= colherleite; i++) {
+            resultado.innerHTML += ` <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8zZyEJ-UUZdR2HRb4Q48zs0LAWkfv3kM9YceCow-1ug&s=10" alt="colherPó">`
+        }
+
+         resultado.innerHTML += "<p>Café em pó:</p>"
+        for (let i = 1; i <= colhercafe; i++) {
+            resultado.innerHTML += ` <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYCWPmmmvaOzDuK0fHjYp0s-gfPfg6YQXaZHBA8efa6g&s=10" alt="">`
+            
+        }
+
+    }
+</script>
+</html>

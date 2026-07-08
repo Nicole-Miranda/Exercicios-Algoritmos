@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>COCA COLA</h1>
+    <label>Quantas cocas colas você acha que bebeu na vida?</label>
+    <input type="text" id="id_coca">
+    <br><br>
+    <button onclick="verificar()">Ver quantidade</button>
+    <div id="resultado"></div>
+    <img src="" alt="">
+</body>
+<script>
+    function verificar(){
+        let quantidadeCoca = Number(id_coca.value)
+
+        for (let i = 0; i < quantidadeCoca; i++) {
+            resultado.innerHTML += ``
+            resultado.innerHTML += ` <img src="https://res.cloudinary.com/piramides/image/upload/c_fill,h_564,w_395/v1/products/3716-coca-cola-lata-350ml-normal-12un.20251024104230.png?_a=BAAAV6GX" alt="coquinhas">` 
+        }
+    }
+</script>
+</html>
