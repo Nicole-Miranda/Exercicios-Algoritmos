@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>NÚMEROS!</h1> 
+   <label>Insira um número entre 0 e 200</label>
+   <input type="text" id="id_numero">
+   <br><br>
+   <button onclick="verificar()">Viva o 7</button>
+   <div id="resultado"></div>
+</body>
+<script>
+    function verificar(){
+        let numero = Number(id_numero.value)
+
+        for (let i = 0; i <= numero; i++) {
+          if(i % 7 == 0){
+            resultado.innerHTML += `${i}<br>`
+          }
+            
+        }
+    }
+</script>
+</html>

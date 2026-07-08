@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TABUADA</h1>
+    <label>Qual tabuada você quer ver?</label>
+    <select name="tabuada" id="tabuada">
+        <option value="2">Tabuada do 2</option>
+        <option value="3">Tabuada do 3</option>
+        <option value="4">Tabuada do 4</option>
+        <option value="5">Tabuada do 5</option>
+        <option value="6">Tabuada do 6</option>
+        <option value="7">Tabuada do 7</option>
+        <option value="8">Tabuada do 8</option>
+        <option value="9">Tabuada do 9</option>
+    </select>
+    <br><br>
+    <label>Até que número?</label>
+    <input type="number" id="id_numero">
+    <br><br>
+    <button onclick="verificar()">Ver tabuada</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificar() {
+
+        let tabuadaEscolhida = Number(tabuada.value)
+        let limite = Number(id_numero.value)
+        
+        let resultado_texto = ""
+
+        for (let i = 1; i <= limite; i++) {
+            let linhas = `${tabuadaEscolhida} x ${i} = ${tabuadaEscolhida * i}`
+
+            
+            if (i % 2 !== 0) {
+                resultado_texto += `<span style="color: red">${linhas}</span><br>`
+            } else {
+                resultado_texto += `<span style="color: blue">${linhas}</span><br>`
+                
+            }
+            
+        }
+        
+        resultado.innerHTML = resultado_texto
+    }
+</script>
+
+</html>

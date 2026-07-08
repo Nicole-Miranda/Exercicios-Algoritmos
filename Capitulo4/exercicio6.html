@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAMA</h1>
+    <label>Insira um número</label>
+    <input type="text" id="id_numero">
+    <br><br>
+    <label>Insira uma frase</label>
+    <input type="text" id="id_frase">
+    <br><br>
+    <button onclick="verificar()">PAPAGAIO</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificar(){
+        let numero = Number(id_numero.value)
+        let frase = id_frase.value
+
+        for (let i = 0; i <= numero; i++) {
+           resultado.innerHTML += `${frase}<br>`
+        }
+    }
+</script>
+</html>

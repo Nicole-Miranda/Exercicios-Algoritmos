@@ -18,13 +18,13 @@
         let nota = Number(id_nota.value)
 
         if(nota < 5){
-            resultado.innerHTML = `Aluno precisa de muita ajuda`
+            alert(`Aluno precisa de muita ajuda`)
         }else if(nota <= 7){
-            resultado.innerHTML = `Aluno na média`
+            alert(`Aluno na média`)
         }else if(nota <= 9.5){
-            resultado.innerHTML = `Aluno a cima da média`
+            alert(`Aluno a cima da média`)
         }else{
-            resultado.innerHTML = `Aluno fora da curva`
+            alert(`Aluno fora da curva`)
         }
     }
 </script>
