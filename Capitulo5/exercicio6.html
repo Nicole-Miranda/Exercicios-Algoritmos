@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FILMES FAVORITOS</h1>
+    <label>Nome do filme</label>
+    <input type="text" id="id_filme">
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    let filmes = []
+
+    function cadastrar(){
+        filmes.push(id_filme.value)
+        id_filme.value = ""
+        atualizarLista()
+    }
+
+    function atualizarLista(){
+        resultado.innerHTML = ""
+
+        for (let i = 0; i < filmes.length; i++) {
+            if (i % 2 == 0) {
+                resultado.innerHTML += `<p style="color: blue;">${filmes[i]}</p>`
+            } else {
+                resultado.innerHTML += `<p style="color: red;">${filmes[i]}</p>`
+            }
+        }
+    }
+</script>
+</html>

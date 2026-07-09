@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FILMES FAVORITOS</h1>
+    <label>Nome do filme</label>
+    <input type="text" id="id_filme">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let filmes = []
+
+    function cadastrar(){
+        filmes.push(id_filme.value)
+        id_filme.value = ""
+        atualizarPainel()
+    }
+
+    function atualizarPainel(){
+        let terceiroFilme 
+        if (filmes.length < 3){
+            terceiroFilme = "Ainda não existe" 
+        } else{
+            terceiroFilme = filmes[2]
+        }
+        
+        let grandeFavorito 
+        if(filmes.length == 0){
+           grandeFavorito = "Ainda não existe"
+            
+        } else{
+        grandeFavorito = filmes[0]
+        }
+
+        let ultimoFavorito 
+        if(filmes.length == 0){
+           ultimoFavorito =  "Ainda não existe" 
+        }else{
+         filmes[filmes.length - 1]   
+        } 
+
+        resultado.innerHTML = `
+            Total de filmes favoritos: ${filmes.length}<br>
+            Seu grande favorito: ${grandeFavorito}<br>
+            Seu 3º filme favorito: ${terceiroFilme}<br>
+            Seu último favorito: ${ultimoFavorito}
+        `
+    }
+</script>
+</html>

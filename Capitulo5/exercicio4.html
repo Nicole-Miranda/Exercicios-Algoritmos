@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FILME</h1>
+    <label>Insira seu filme favorito começando pelo Top1!</label>
+    <input type="text" id="id_filme">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar filmes</button>
+    <br><br>
+    <button onclick="favoritos()">Ver favoritos</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let filmes =[]
+    function cadastrar(){
+        let filmeFavorito = id_filme.value
+        filmes.push(filmeFavorito)
+        alert('Filme cadastrado')
+    }
+
+    function favoritos(){
+
+        for (let i = 0; i < filmes.length; i++) {
+
+            resultado.innerHTML += `Filmes: ${filmes[i]}<br>`
+            
+        }
+        resultado.innerHTML += `<br> O filme que mais gosta é ${filmes[0]}<br>
+        E desses, o que menos gosta é ${filmes[filmes.length - 1]}`
+    }
+</script>
+</html>

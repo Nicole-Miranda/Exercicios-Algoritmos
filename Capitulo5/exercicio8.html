@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROJETOS</h1>
+    <label>Inserir o nome dos seus projetos</label>
+    <input type="text" id="id_projeto">
+    <br><br>
+    <button onclick="registrar()">Registrar projetos</button>
+    <br><br>
+    <button onclick="mostrarProjetos()">Mostrar projetos</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let projetos = []
+    function registrar(){
+        let nomeProjetos = id_projeto.value
+        projetos.push(nomeProjetos)
+        alert('Projeto cadastrado!')
+
+        atualizandoProjetos()
+    }
+
+    function atualizandoProjetos(){
+        let nivel 
+        if(projetos.length <= 4){
+            nivel = 'Júnior'
+        }else if(projetos.length <= 12){
+           nivel = 'Pleno'
+        }else{
+            nivel = 'Sênior'
+        }
+
+        let ultimoProjeto = projetos[projetos.length - 1]
+
+            resultado.innerHTML = `Você já fez ${ultimoProjeto}. Por isso você é um profissional ${nivel} <br>`
+            
+        
+    }
+
+    function mostrarProjetos(){
+        for (let i = projetos.length -1; i >= 0; i--) {
+            
+            resultado.innerHTML += `<br>${projetos[i]}<br>`
+        }
+    }
+</script>
+</html>

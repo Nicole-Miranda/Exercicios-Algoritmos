@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Insira o nome do bairro em que já morou</label>
+    <input type="text" id="id_bairro">
+    <br><br>
+    <label>Insira o número indicando o local onde morou</label>
+    <input type="text" id="id_local">
+    <button onclick="cadastrar()">Cadastrar bairro</button>
+    <br><br>
+    <button onclick="moradia()">Relembrar moradia</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let bairros = []
+    function cadastrar(){
+        let nomeBairro = id_bairro.value
+        bairros.push(nomeBairro)
+    }
+
+    function moradia(){
+        let local = Number(id_local.value)
+        let indice = local - 1
+
+        if(local < 1 || local > bairros.length ){
+            resultado.innerHTML = `Você ainda não morou num ${indice}° bairro`
+        }else{
+            resultado.innerHTML = bairros[indice]
+        }
+
+
+    }
+</script>
+</html>
