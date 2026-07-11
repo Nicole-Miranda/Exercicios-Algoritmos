@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FILHO</h1>
+    <label>Insira o nome dos seus filhos</label>
+    <input type="text" id="id_nome">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <button onclick="atualizar()">Atualizar Família</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let nome = []
+    function cadastrar(){
+        let nomeFilho = id_nome.value
+        
+        if(nome.includes(nomeFilho)){
+            alert(`Não pode mais de 1 filho com o mesmo nome!`)
+        }else{
+            nome.push(nomeFilho)
+            alert('Filho cadastrado!')
+        }
+    }
+
+    function atualizar(){
+
+        //let soma = 0
+        resultado.innerHTML = ""
+        for (let i = 0; i < nome.length; i++) {
+         
+            resultado.innerHTML += `Você tem ${nome[i]} de filho(a)<br>`
+            //soma += 1
+        }
+        resultado.innerHTML += `<br>Você tem ${nome.length} filhos<br>`
+        resultado.innerHTML += `<br>Seu custo mensal será de aproximadamente R$ ${nome.length * 3000} se colocá-los em escola
+        particular ou R$ ${nome.length * 1500} se eles estudarem em escola pública`
+    }
+</script>
+</html>

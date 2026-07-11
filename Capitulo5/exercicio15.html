@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+</head>
+<body>
+    <h1>LOJA</h1>
+    <label>Nome do produto</label>
+    <br>
+    <input type="text" id="id_nome">
+    <br><br>
+    <label>Preço de compra</label>
+    <br>
+    <input type="number" id="id_preco">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <button onclick="relatorio()">Relatório de estoque</button>
+    <br><br>
+    <div id="resultado"></div>
+
+</body>
+<script>
+    let nomes = []
+    let precos = []
+
+    function cadastrar() {
+        let nome = id_nome.value
+        let preco = Number(id_preco.value)
+        nomes.push(nome)
+        precos.push(preco)
+        alert('Produto cadastrado!')
+    }
+
+    function relatorio() {
+        resultado.innerHTML = `Total de produtos: ${nomes.length} <br><br>`
+
+        let somaPrecosCompra = 0
+        let somaPrecoVenda = 0
+        let maior = precos[0]
+        let menor = precos[0]
+        let nomeMaisСaro = nomes[0]
+        let nomeMaisBarato = nomes[0]
+
+        for (let i = 0; i < nomes.length; i++) {
+            let precoVenda = precos[i] * 1.25
+
+            resultado.innerHTML += `Produto ${i + 1}: ${nomes[i]} <br>
+            Preço de compra: R$${precos[i].toFixed(2)}. Vender por R$${precoVenda.toFixed(2)} <br><br>`
+
+            somaPrecosCompra += precos[i]
+            somaPrecoVenda += precoVenda
+
+            if (precos[i] > maior) {
+                maior = precos[i]
+                nomeMaisCaro = nomes[i]
+            }
+
+            if (precos[i] < menor) {
+                menor = precos[i]
+                nomeMaisBarato = nomes[i]
+            }
+        }
+
+        let mediaVenda = somaPrecoVenda / nomes.length
+
+        resultado.innerHTML += `
+        <br>
+        Produto mais caro: ${nomeMaisCaro} <br>
+        Produto mais barato: ${nomeMaisBarato} <br>
+        Soma dos preços de compra: R$${somaPrecosCompra.toFixed(2)} <br>
+        Média de preço de venda: R$${mediaVenda.toFixed(2)}
+        `
+    }
+</script>
+</html>

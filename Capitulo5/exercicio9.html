@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BUSÃO</h1>
+    <label>Insira as linhas de ônibus que pegou essa semana</label>
+    <input type="text" id="id_busao">
+    <br><br>
+    <button onclick='cadastrar()'>Gravar busão</button>
+    <br><br>
+    <label>Pesquise por uma linha de ônibus</label>
+    <input type="text" id="id_linha">
+    <br><br>
+    <button onclick="pesquisa()">Pesquisar</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let onibus = []
+    function cadastrar(){
+        let linhaOnibus = id_busao.value
+        onibus.push(linhaOnibus)
+        alert('Linha de ônibus gravada!')
+        console.log(onibus)
+
+        mostrarLinhas()
+    }
+    
+    function mostrarLinhas(){
+
+        resultado.innerHTML = ""
+        for (let i = onibus.length - 1; i >= 0; i--) {
+
+            resultado.innerHTML += `<br>${onibus[i]}<br>`
+            
+        }
+
+    }
+
+    function pesquisa(){
+        let linhaUsada = id_linha.value
+        let usada = []
+    
+        for (let j = 0; j < onibus.length; j++) {
+            
+            if(linhaUsada == onibus[j]){
+               usada.push(j + 1)
+            }
+            
+        }
+
+        if(usada.length == 0){
+            resultado.innerHTML += `<br> Você nunca pegou essa linhas`
+        }else{
+            resultado.innerHTML += `<br> Você já pegou essa linha ${usada.length} vezes`
+        }
+    }
+</script>
+</html>

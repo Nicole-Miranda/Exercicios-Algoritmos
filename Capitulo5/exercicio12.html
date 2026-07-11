@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanha de Futebol</title>
+</head>
+<body>
+    <h1>CAMPANHA</h1>
+
+    <label>Indique o resultado</label>
+    <br>
+    <select id="sel_resultado">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select>
+    <br><br>
+    <button onclick="registrarJogo()">Registrar jogo</button>
+    <br><br>
+
+    <div id="resultado"></div>
+
+    <br>
+    <label>Indique qual jogo deseja saber o resultado</label>
+    <br>
+    <input type="number" id="id_jogo" min="1" oninput="pesquisarJogo()">
+    <br><br>
+    <div id="resultado"></div>
+
+</body>
+<script>
+    let jogos = []
+    let v = 0, e = 0, d = 0
+
+    function registrarJogo() {
+        let res = sel_resultado.value
+        jogos.push(res)
+
+        if (res === 'vitoria'){
+            v++
+        }
+        else if (res === 'empate'){
+            e++
+        } 
+        else if (res === 'derrota'){
+            d++
+            
+        }
+
+        let pontos = v * 3 + e
+        let possivel = jogos.length * 3
+        let aproveitamento = Math.round((pontos / possivel) * 100)
+
+        resultado.innerHTML = `O time teve: ${v} vitória(s), ${e} empate(s), ${d} derrota(s) <br>
+        Pontuação total: ${pontos} ponto(s) <br>
+        Aproveitamento: ${aproveitamento}%`
+    }
+
+    function pesquisarJogo() {
+        let val = Number(id_jogo.value)
+        let posicao = val - 1
+
+        if (!val || val < 1) {
+           resultado.innerHTML = ""
+        } else if (posicao >= jogos.length) {
+           resultado.innerHTML = `Não foi cadastrado um ${val}º jogo`
+        } else if (jogos[posicao] === 'vitoria') {
+            resultado.innerHTML = `No ${val}º jogo, o time Ganhou`
+        } else if (jogos[posicao] === 'empate') {
+            resultado.innerHTML = `No ${val}º jogo, o time Empatou`
+        } else if (jogos[posicao] === 'derrota') {
+            resultado.innerHTML = `No ${val}º jogo, o time Perdeu`
+        }
+    }
+</script>
+</html>

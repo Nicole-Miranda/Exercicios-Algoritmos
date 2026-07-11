@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PRODUTO</h1>
+    <label>Insira o preço de cada produto</label>
+    <input type="text" id="id_produto">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <button onclick="atualizar()">Atualizar estoque</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let estoque = []
+    function cadastrar(){
+        let produto = Number(id_produto.value)
+        estoque.push(produto)
+        alert('Preço cadastrado!')
+    }
+
+    function atualizar(){
+        resultado.innerHTML = ""
+        let produto = Number(id_produto.value)
+        let somaEstoque = 0
+
+        for (let i = estoque.length - 1; i >= 0; i--) {
+            resultado.innerHTML += `<br> ${estoque[i]}<br>`
+            somaEstoque += estoque[i]
+        }
+        resultado.innerHTML += `<br> Você tem ${estoque.length} produtos cadastrados em estoque <br>`
+        resultado.innerHTML += `<br> Seu estoque vale R$ ${somaEstoque} <br>`
+    }
+</script>
+</html>

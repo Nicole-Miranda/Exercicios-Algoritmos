@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NÚMERO</h1>
+    <label>Digite um número qualquer</label>
+    <input type="text" id="id_numero">
+    <br><br>
+    <button onclick="analisar()">Analisar histórico</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let numeros = []
+    function analisar(){
+        let numeroQualquer = Number(id_numero.value)
+        numeros.push(numeroQualquer)
+        alert('Número cadastrado!')
+
+        let maiorNumero = numeros[0]
+        let menorNumero = numeros[0]
+        resultado.innerHTML = ""
+        for (let i = 1; i < numeros.length; i++) {
+            if(numeros[i] > maiorNumero){
+                maiorNumero = numeros[i]
+            }
+            if(numeros[i] < menorNumero[i]){
+                menorNumero = numeros[i]
+            }
+            resultado.innerHTML += `<br>${i}° Número: ${numeros[i]}<br>`
+            resultado.innerHTML += `<br>Maior: ${maiorNumero}<br>`
+            resultado.innerHTML += `<br>Menor: ${menorNumero}<br>`
+        }
+    }
+</script>
+</html>
