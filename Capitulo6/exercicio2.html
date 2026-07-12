@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ATENDIMENTO!</h1>
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="resultado"></div>
+    <br><br>
+    <button onclick="equipe()">Equipe</button>
+    <div id="texto"></div>
+
+</body>
+<script>
+    let avaliacoes = []
+    function avaliar() {
+
+        let numero = (Math.random() * (5 - 0) + 0).toFixed(2);
+        //(Math.random() * (max - min)) + min;
+
+        console.log(numero)
+        avaliacoes.push(Number(numero))
+
+        if (numero <= 0.5) {
+            resultado.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png" alt=""><br>`
+            //avaliacoes.push(numero)
+        } else if (numero <= 1.5) {
+            resultado.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png" alt=""><br>`
+            //avaliacoes.push(numero)
+
+        } else if (numero <= 3.5) {
+            resultado.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png" alt=""><br>`
+            //avaliacoes.push(numero)
+
+        } else if (numero <= 4.5) {
+            resultado.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png" alt=""><br>`
+            //avaliacoes.push(numero)
+
+        } else {
+            resultado.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png" alt=""><br>`
+            //avaliacoes.push(numero)
+
+        }
+    }
+
+    function equipe() {
+        //let media = 
+        
+        let soma = 0
+        for (let i = 0; i < avaliacoes.length; i++) {
+            soma += avaliacoes[i]
+            console.log("SOMA:" + soma)
+            console.log("AVALIACAO:" + avaliacoes[i])
+        }
+        let media = soma / avaliacoes.length
+        console.log(media)
+
+            if (media <= 0.5) {
+                texto.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png" alt=""><br>`
+               
+            } else if (media <= 1.5) {
+                texto.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png" alt=""><br>`
+               
+
+            } else if (media <= 3.5) {
+                texto.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png" alt=""><br>`
+                
+
+            } else if (media <= 4.5) {
+                texto.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png" alt=""><br>`
+                
+            } else {
+                texto.innerHTML = ` <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png" alt=""><br>`
+                
+            }
+            texto.innerHTML += `Média geral: ${media.toFixed(2)}`
+    }
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NÙMERO DA SORTE</h1>
+    <label>Insira seu número da sorte(de 0 a 100)</label>
+    <input type="text" id="id_numero">
+    <br><br>
+    <button onclick="valendo()">Valendo</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function valendo(){
+       let numero = (Math.random() * (100 - 0) + 0).toFixed(0) 
+       let numeroSorte = Number(id_numero.value)
+        let contador = 0
+       while(numero != numeroSorte){
+        contador ++
+        numero = (Math.random() * (100 - 0) + 0).toFixed(0)
+        console.log(numero)
+        console.log(contador)
+       }
+       alert(`Foram necessários ${contador} sorteios para achar seu número da sorte`)
+       
+    }
+</script>
+</html>

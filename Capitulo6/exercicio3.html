@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>PEDRA-PAPEL-TESOURA</h1>
+    <br><br>
+    <button onclick="jogar()">Jogar</button>
+    <div id="resultado"></div>
+    <img src="" alt="">
+
+</body>
+<script>
+    //papel == 1
+    //pedra == 2
+    // tesoura == 3
+    function jogar() {
+        let jogador1 = (Math.random() * (3 - 1) + 1).toFixed(0)
+        let jogador2 = (Math.random() * (3 - 1) + 1).toFixed(0)
+
+        if (jogador1 == 1 && jogador2 == 2) {
+            resultado.innerHTML = `Jogador 1 venceu porque papel cobre a pedra<br>`
+            resultado.innerHTML += ` <img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127557259385/papel.jpg?ex=6a544e16&is=6a52fc96&hm=d7f01cff2aceef64e97d6b21409b455f1d4b8f4d1eea466b8a92222d0a4197b8&=&format=webp" alt="">`
+            resultado.innerHTML += ` <img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127804592289/pedra.jpg?ex=6a544e16&is=6a52fc96&hm=a393aa878b34693f4006fa3079dd59eab0f93420b2494c4c2eeba169680093da&=&format=webp" alt=""><br><br><br>`
+
+        } else if (jogador1 == 2 && jogador2 == 3) {
+            resultado.innerHTML = `Jogador 1 venceu porque pedra quebra tesoura<br>`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127804592289/pedra.jpg?ex=6a544e16&is=6a52fc96&hm=a393aa878b34693f4006fa3079dd59eab0f93420b2494c4c2eeba169680093da&=&format=webp" alt="">`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691128047992833/tesoura.jpg?ex=6a544e16&is=6a52fc96&hm=621de6de982c825db09cd803adbdd285aa489a562f2052dddf9f15a0577b5cbf&=&format=webp" alt=""><br><br><br`
+        } else if (jogador1 == 3 && jogador2 == 1) {
+            resultado.innerHTML = `Jogador 1 venceu porque tesoura corta papel<br>`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691128047992833/tesoura.jpg?ex=6a544e16&is=6a52fc96&hm=621de6de982c825db09cd803adbdd285aa489a562f2052dddf9f15a0577b5cbf&=&format=webp" alt="">`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127557259385/papel.jpg?ex=6a544e16&is=6a52fc96&hm=d7f01cff2aceef64e97d6b21409b455f1d4b8f4d1eea466b8a92222d0a4197b8&=&format=webp" alt=""><br><br><br`
+
+        } else if (jogador1 == 1 && jogador2 == 3) {
+            resultado.innerHTML = `Jogador 2 venceu porque tesoura corta papel<br>`
+            resultado.innerHTML += ` <img src="https://media.discordapp.net/attachments/1482860817559982302/1525691128047992833/tesoura.jpg?ex=6a544e16&is=6a52fc96&hm=621de6de982c825db09cd803adbdd285aa489a562f2052dddf9f15a0577b5cbf&=&format=webp" alt="">`
+            resultado.innerHTML += ` <img src="https://cdn.discordapp.com/attachments/1482860817559982302/1525691127557259385/papel.jpg?ex=6a544e16&is=6a52fc96&hm=d7f01cff2aceef64e97d6b21409b455f1d4b8f4d1eea466b8a92222d0a4197b8&" alt=""><br><br><br>`
+        } else if (jogador1 == 2 && jogador2 == 1) {
+            resultado.innerHTML = `Jogador 2 venceu porque papel cobre a pedra<br>`
+            resultado.innerHTML += `<img src="https://cdn.discordapp.com/attachments/1482860817559982302/1525691127557259385/papel.jpg?ex=6a544e16&is=6a52fc96&hm=d7f01cff2aceef64e97d6b21409b455f1d4b8f4d1eea466b8a92222d0a4197b8&" alt="">`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127804592289/pedra.jpg?ex=6a544e16&is=6a52fc96&hm=a393aa878b34693f4006fa3079dd59eab0f93420b2494c4c2eeba169680093da&=&format=webp" alt=""><br><br><br>`
+        } else if (jogador1 == 3 && jogador2 == 2) {
+            resultado.innerHTML = `Jogador 2 venceu porque pedra quebra tesoura<br>`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127804592289/pedra.jpg?ex=6a544e16&is=6a52fc96&hm=a393aa878b34693f4006fa3079dd59eab0f93420b2494c4c2eeba169680093da&=&format=webp" alt="">`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691128047992833/tesoura.jpg?ex=6a544e16&is=6a52fc96&hm=621de6de982c825db09cd803adbdd285aa489a562f2052dddf9f15a0577b5cbf&=&format=webp" alt=""><br><br><br>`
+        }else if(jogador1 == 1 && jogador2 == 1){
+            resultado.innerHTML = `EMPATE!Jogue novamente!<br>`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127557259385/papel.jpg?ex=6a544e16&is=6a52fc96&hm=d7f01cff2aceef64e97d6b21409b455f1d4b8f4d1eea466b8a92222d0a4197b8&=&format=webp" alt="">`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127557259385/papel.jpg?ex=6a544e16&is=6a52fc96&hm=d7f01cff2aceef64e97d6b21409b455f1d4b8f4d1eea466b8a92222d0a4197b8&=&format=webp" alt=""><br><br><br>`
+        }else if(jogador1 == 2 && jogador2 == 2){
+            resultado.innerHTML = `EMPATE!Jogue novamente!<br>`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127804592289/pedra.jpg?ex=6a544e16&is=6a52fc96&hm=a393aa878b34693f4006fa3079dd59eab0f93420b2494c4c2eeba169680093da&=&format=webp" alt="">`
+            resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691127804592289/pedra.jpg?ex=6a544e16&is=6a52fc96&hm=a393aa878b34693f4006fa3079dd59eab0f93420b2494c4c2eeba169680093da&=&format=webp" alt=""><br><br><br>`
+        }else if(jogador1 == 3 && jogador2 == 3){
+             resultado.innerHTML = `EMPATE!Jogue novamente!<br>`
+             resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691128047992833/tesoura.jpg?ex=6a544e16&is=6a52fc96&hm=621de6de982c825db09cd803adbdd285aa489a562f2052dddf9f15a0577b5cbf&=&format=webp" alt="">`
+             resultado.innerHTML += `<img src="https://media.discordapp.net/attachments/1482860817559982302/1525691128047992833/tesoura.jpg?ex=6a544e16&is=6a52fc96&hm=621de6de982c825db09cd803adbdd285aa489a562f2052dddf9f15a0577b5cbf&=&format=webp" alt=""><br><br><br>`
+        }
+
+    }
+</script>
+
+</html>
