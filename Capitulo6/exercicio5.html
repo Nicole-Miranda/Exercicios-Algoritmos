@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIVE TURTLES</title>
+</head>
+<body>
+    <h1>FIVE TURTLES</h1>
+
+    <label>Nome do corredor 1</label>
+    <input type="text" id="id_corredor1"><br><br>
+    <label>Nome do corredor 2</label>
+    <input type="text" id="id_corredor2"><br><br>
+    <label>Nome do corredor 3</label>
+    <input type="text" id="id_corredor3"><br><br>
+    <label>Nome do corredor 4</label>
+    <input type="text" id="id_corredor4"><br><br>
+    <label>Nome do corredor 5</label>
+    <input type="text" id="id_corredor5"><br><br>
+
+    <label>Distância da prova (entre 5 e 42 km)</label>
+    <input type="text" id="id_distancia"><br><br>
+
+    <button onclick="largada()">Dar a largada</button>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function sortearTempo(){
+        let tempo = Math.random() * (6 - 4) + 4
+        return Number(tempo.toFixed(1))
+    }
+
+    function largada(){
+        let corredores = [
+            id_corredor1.value,
+            id_corredor2.value,
+            id_corredor3.value,
+            id_corredor4.value,
+            id_corredor5.value
+        ]
+
+        let distancia = Number(id_distancia.value)
+
+        if (distancia < 5 || distancia > 42) {
+            alert("A distância precisa estar entre 5 e 42 km!")
+            return
+        }
+
+        resultado.innerHTML = ""
+
+        let acumulado = []
+        for (let i = 0; i < corredores.length; i++) {
+            acumulado.push(0)
+        }
+        let historico = []
+
+        for (let i = 1; i <= distancia; i++) {
+            let voltaKm = []
+
+            for (let j = 0; j < corredores.length; j++) {
+                let tempo = sortearTempo()
+                acumulado[j] += tempo
+
+                voltaKm.push({
+                    nome: corredores[j],
+                    tempoVolta: tempo,
+                    tempoAcumulado: Number(acumulado[j].toFixed(1))
+                })
+            }
+            historico.push(voltaKm)
+
+            let indiceLider = 0
+            for (let k = 1; k < corredores.length; k++) {
+                if (acumulado[k] < acumulado[indiceLider]) {
+                    indiceLider = k
+                }
+            }
+
+            if (km < distancia) {
+                alert(`Líder no km ${km}: ${corredores[indiceLider]} - tempo acumulado: ${acumulado[indiceLider].toFixed(1)} min`)
+            } else {
+                exibirPodio(corredores, acumulado)
+            }
+        }
+
+       //dificuldade em destrinchar todo o exercício
+    }
+
+</script>
+</html>
